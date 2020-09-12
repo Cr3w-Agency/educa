@@ -126,5 +126,5 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 
 #TODO
-""" 343 """
-""" Управление модулями курсов и их содержимым """
+""" 361 """
+""" Доступ к содержимому курсов """
