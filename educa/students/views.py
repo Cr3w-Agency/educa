@@ -20,7 +20,7 @@ class StudentRegistrationView(CreateView):
         result = super(StudentRegistrationView, self).form_valid(form)
         cd = form.cleaned_data
         user = authenticate(username=cd['username'],
-                            password=cd['password'])
+                            password=cd['password1'])
         login(self.request, user)
         return result
 
@@ -60,5 +60,5 @@ class StudentCourseDetailView(DetailView):
         if 'module_id' in self.kwargs:
             context['module'] = course.modules.get(id=self.kwargs['module_id'])
         else:
-            course['module'] = course.modules.all()[0]
+            context['module'] = course.modules.all()[0]
         return context
